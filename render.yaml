@@ -54,3 +54,18 @@ services:
 
       - key: TMDB_KEY
         sync: false
+
+  - name: cinecircle-client
+    type: web
+    runtime: static
+    branch: main
+    rootDir: ./client
+    buildCommand: "npm run build"
+    staticPublishPath: ./dist
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: cinecircle-server
+          property: url
