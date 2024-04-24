@@ -65,7 +65,4 @@ services:
     autoDeploy: true
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: cinecircle-server
-          property: connectionString
+        value: "https://cinecircle-server.onrender.com"
