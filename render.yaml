@@ -14,7 +14,7 @@ services:
     runtime: node
     branch: main
     rootDir: ./server
-    buildCommand: ./bin/render-build.sh"
+    buildCommand: "./bin/render-build.sh"
     startCommand: "node ./src/server.js"
     autoDeploy: true
     envVars:
