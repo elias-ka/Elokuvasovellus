@@ -55,7 +55,7 @@ services:
       - key: TMDB_KEY
         sync: false
 
-  - name: cinecircle-client
+  - name: cinecircle
     type: web
     runtime: static
     branch: main
