@@ -1,14 +1,5 @@
 import { MovieCard } from "../../components/MovieCard";
-import {
-  Container,
-  Title,
-  useMantineTheme,
-  Space,
-  rem,
-  SegmentedControl,
-  Group,
-  Loader,
-} from "@mantine/core";
+import { Title, useMantineTheme, Space, SegmentedControl, Group, Loader } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { Carousel } from "@mantine/carousel";
 import { useEffect, useState } from "react";
@@ -38,7 +29,6 @@ export default function Recommendations() {
   }, [favMovies, favTv]);
 
   const filterFavorites = () => {
-    console.log(favorites);
     if (!isLoggedIn || !favorites) {
       setFavMovies([]);
       setFavTv([]);

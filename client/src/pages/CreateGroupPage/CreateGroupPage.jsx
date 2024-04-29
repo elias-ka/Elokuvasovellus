@@ -28,9 +28,8 @@ export default function CreateGroupPage() {
       };
       setGroupCreated(true);
       setNewGroupObject(newGroupData);
-      console.log("Group created");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
@@ -43,7 +42,11 @@ export default function CreateGroupPage() {
       {groupCreated ? (
         <>
           <h2 style={{ textAlign: "center" }}>Group created!</h2>
-            <GroupInfoCard group={newGroupObject} membershipStatus={membershipStatus} showActionButton= {false} />
+          <GroupInfoCard
+            group={newGroupObject}
+            membershipStatus={membershipStatus}
+            showActionButton={false}
+          />
           <Group mt="xl" justify="center">
             <Button onClick={handleTitleClick}>Go to group's page</Button>
             <Button onClick={() => navigate("/groups")}>Browse all groups</Button>

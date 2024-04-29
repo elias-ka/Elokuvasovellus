@@ -1,7 +1,7 @@
 import { api } from "./api";
 
 export async function getAllGroups() {
-  const { data } = await api.get('/groups')
+  const { data } = await api.get("/groups");
   return data;
 }
 

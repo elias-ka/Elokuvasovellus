@@ -1,13 +1,5 @@
 import { MovieCard } from "../../components/MovieCard";
-import {
-  Container,
-  Title,
-  useMantineTheme,
-  Space,
-  rem,
-  SegmentedControl,
-  Group,
-} from "@mantine/core";
+import { Title, useMantineTheme, Space, SegmentedControl, Group } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { Carousel } from "@mantine/carousel";
 import { useEffect, useState } from "react";

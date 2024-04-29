@@ -1,5 +1,5 @@
 import { MovieCard } from "../../components/MovieCard";
-import { Container, useMantineTheme, Grid, Space, rem } from "@mantine/core";
+import { Container, Grid, Space } from "@mantine/core";
 
 export default function SearchResults({ media }) {
   const mediaArray = media;

@@ -1,5 +1,5 @@
-import { TextInput, ActionIcon, useMantineTheme, rem } from '@mantine/core';
-import { IconSearch, IconArrowRight } from '@tabler/icons-react';
+import { TextInput, ActionIcon, useMantineTheme, rem } from "@mantine/core";
+import { IconSearch, IconArrowRight } from "@tabler/icons-react";
 
 export default function SearchBar(props) {
   const theme = useMantineTheme();
@@ -8,7 +8,6 @@ export default function SearchBar(props) {
     <TextInput
       radius="xl"
       size="md"
-      // placeholder="Search movies and TV shows"
       placeholder={props.placeholder}
       rightSectionWidth={42}
       leftSection={<IconSearch style={{ width: rem(18), height: rem(18) }} stroke={1.5} />}

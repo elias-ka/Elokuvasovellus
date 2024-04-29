@@ -15,7 +15,6 @@ router.get("/", async (_req, res) => {
 router.get("/user/:username", async (req, res) => {
   try {
     const result = await reviews.getByUsername(req.params.username);
-    console.log(result);
     res.json(result);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -25,7 +24,6 @@ router.get("/user/:username", async (req, res) => {
 router.get("/media/:tmdbId", async (req, res) => {
   try {
     const result = await reviews.getByTmdbId(req.params.tmdbId);
-    console.log(result);
     res.json(result);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -72,7 +70,6 @@ router.put("/", verifyToken, async (req, res) => {
 router.delete("/:id", verifyToken, async (req, res) => {
   try {
     const result = await reviews.delete(req.params.id);
-    console.log(result);
     res.status(200).json(result);
   } catch (err) {
     res.status(400).json({ error: err.message });

@@ -23,7 +23,7 @@ export default function ActorPage() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [actorId, setActorId] = useState(location.state.id);
+  const actorId = location.state.id;
   const [actorInfo, setActorInfo] = useState([]);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

@@ -40,7 +40,7 @@ export default function UserInfoProvider({ children }) {
       );
       setUserGroups(userMemberGroups);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -48,11 +48,9 @@ export default function UserInfoProvider({ children }) {
     if (!isLoggedIn) return;
     try {
       const usersGroups = await getGroupsByUserId(userId);
-      // console.log("getUserGroups:", usersGroups);
       setUserGroupIds(usersGroups);
-      // console.log("Users groups fetched. Found", usersGroups.length, "groups.");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

@@ -12,6 +12,7 @@ const showtimes = require("../models/showtimes_model");
 const groupContentsModel = require("../models/group_contents_model");
 const groupMembersModel = require("../models/group_members_model");
 const groupsModel = require("../models/groups_model");
+
 router.post("/", async (req, res) => {
   try {
     const { username, password, confirmPw } = req.body;
@@ -184,12 +185,10 @@ router.delete("/", verifyToken, async (req, res) => {
 });
 
 router.post("/:username/favorites", verifyToken, async (req, res) => {
-  //console.log(req.body)
   try {
     const result = await mediaModel.getByTmdbId(req.body.tmdbId);
     const rows = result.rowCount;
-    //console.log("From users.js By TMDBid result:")
-    //console.log(rows)
+
     if (rows === 0) {
       const mediaObject = {
         title: req.body.title,

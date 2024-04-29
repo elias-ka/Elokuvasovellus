@@ -2,7 +2,6 @@ const { dbPool } = require("../database/db_connection");
 
 const showtimes = {
   add: async (showtime) => {
-    console.log("showtime", showtime);
     await dbPool.query("INSERT INTO showtimes (showtime_id, showtime_obj ) VALUES ($1, $2)", [
       showtime.ID,
       showtime.showtimeObj,

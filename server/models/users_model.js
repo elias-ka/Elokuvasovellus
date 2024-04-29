@@ -44,7 +44,6 @@ const userModel = {
   },
 
   deleteFavorite: async function (username, tmdbId) {
-    console.log(username, tmdbId);
     await dbPool.query(
       `DELETE FROM favorites
       WHERE user_id IN (SELECT user_id FROM users WHERE username = $1)

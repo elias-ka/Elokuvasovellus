@@ -30,9 +30,8 @@ export default function GroupsPage() {
       const groups = await getAllGroups();
       const sortedGroups = groups.sort((a, b) => a.group_name.localeCompare(b.group_name));
       setGroups(sortedGroups);
-      console.log("All groups fetched, found", groups.length, "groups.");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -41,9 +40,8 @@ export default function GroupsPage() {
     try {
       const usersGroups = await getGroupsByUserId(userId);
       setUserGroupIds(usersGroups);
-      console.log("Users groups fetched. Found", usersGroups.length, "groups.");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -67,10 +65,8 @@ export default function GroupsPage() {
     try {
       if (action === "send") {
         await sendRequest(groupId, userId);
-        console.log("Request sent to group: ", groupId);
       } else if (action === "cancel") {
         await cancelRequest(groupId, userId);
-        console.log("Request cancelled for group: ", groupId);
       }
       setUpdateTrigger((prev) => prev + 1);
     } catch (error) {
