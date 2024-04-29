@@ -33,14 +33,14 @@ Projektin aikana jokainen ryhmän jäsen osallistui tietokannan, palvelimen ja k
     <td><b>Backend</b></td>
     <td>TMDB REST API</td>
     <td>Käyttäjänhallinta ja sen yksikkötestaus, tietokantamigraatiot, näytösaikojen lisäys</td>
-    <td>Ryhmien hallinta, suosikkilistan jako</td>
+    <td>Ryhmien hallinta, median jako ryhmiin, suosikkilistan jako</td>
     <td>Käyttäjän poisto, näytösaikojen jako</td>
   </tr>
   <tr>
     <td><b>Frontend</b></td>
     <td>Trendaavat elokuvat ja sarjat, suositukset, suodatettu haku, media- ja näyttelijäsivut</td>
     <td>Käyttäjän autentikointi, näytösaikojen selaus, arvostelujen lisäys ja selaus, sivun julkaisu, responsiivisuus ja teema</td>
-    <td>Ryhmien hallinta, suosikkilistan jako</td>
+    <td>Ryhmien hallinta, median jako ryhmiin, suosikkilistan jako</td>
     <td>Käyttäjän poisto, profiilisivu, näytösaikojen jako</td>
   </tr>
 </table>
