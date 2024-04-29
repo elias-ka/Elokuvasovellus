@@ -3,14 +3,13 @@ import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function LeaveGroupModal({ handleMemberAction, username, user_id, groupDetails}) {
+export default function LeaveGroupModal({ handleMemberAction, user_id, groupDetails }) {
   const [opened, { open, close }] = useDisclosure(false);
   const [deleted, setDeleted] = useState(false);
   const navigate = useNavigate();
 
   const handleDelete = async () => {
     await handleMemberAction(user_id, "removeUser");
-    console.log(`User '${username}' left the group '${groupDetails.group_name}'`);
     setDeleted(true);
   };
 
@@ -30,24 +29,23 @@ export default function LeaveGroupModal({ handleMemberAction, username, user_id,
       <Modal opened={opened} onClose={handleClose} title="Confirm leaving group" centered>
         {!deleted ? (
           <>
-        <Text size="md">
-          Are you sure you want to leave the group '{groupDetails.group_name}'? This action cannot be undone.
-        </Text>
-        <Space h="xl" />
-        <Button fullWidth color="red" onClick={handleDelete}>
-          Leave Group
-        </Button>
-        </>
+            <Text size="md">
+              Are you sure you want to leave the group '{groupDetails.group_name}'? This action
+              cannot be undone.
+            </Text>
+            <Space h="xl" />
+            <Button fullWidth color="red" onClick={handleDelete}>
+              Leave Group
+            </Button>
+          </>
         ) : (
-            <>
-              <Text size="md">
-                You left the group '{groupDetails.group_name}'! 
-              </Text>
-              <Space h="xl" />
-              <Button fullWidth onClick={() => navigate("/groups")}>
-                Browse all groups
-              </Button>
-            </>
+          <>
+            <Text size="md">You left the group '{groupDetails.group_name}'!</Text>
+            <Space h="xl" />
+            <Button fullWidth onClick={() => navigate("/groups")}>
+              Browse all groups
+            </Button>
+          </>
         )}
       </Modal>
     </>

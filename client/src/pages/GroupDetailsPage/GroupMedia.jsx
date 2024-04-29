@@ -38,7 +38,6 @@ export default function GroupMedia({ groupId, isOwner }) {
   const handleDelete = async (id) => {
     try {
       await deleteGroupContentById(id);
-      console.log("Deleted", id);
     } catch (error) {
       console.error(error);
     }

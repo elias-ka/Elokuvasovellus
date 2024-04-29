@@ -2,7 +2,6 @@ import { Stack, Text } from "@mantine/core";
 import { ShowtimeCard } from "../../components/ShowtimeCard";
 import { getGroupShowtime } from "../../data/groupContent";
 import { useState, useEffect } from "react";
-import useUserInfo from "../../hooks/useUserInfo";
 import { useLocation } from "react-router-dom";
 
 export default function GroupShowtimes() {

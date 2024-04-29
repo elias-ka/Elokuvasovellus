@@ -34,7 +34,7 @@ export async function addShowtimeToGroup(groupId, userId, ID, showtime) {
   const { data } = await api.post(`/groups/${groupId}/contents/showtime`, {
     addedBy: userId,
     ID,
-    showtimeObjectRaw: showtime
+    showtimeObjectRaw: showtime,
   });
   return data;
 }

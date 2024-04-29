@@ -1,3 +1,3 @@
-import GroupInfoCard from './GroupInfoCard.jsx';
+import GroupInfoCard from "./GroupInfoCard.jsx";
 
 export { GroupInfoCard };

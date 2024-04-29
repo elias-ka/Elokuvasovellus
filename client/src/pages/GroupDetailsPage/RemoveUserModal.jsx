@@ -8,7 +8,6 @@ export default function RemoveUserModal({ handleMemberAction, user_id, username 
 
   const handleDelete = async () => {
     await handleMemberAction(user_id, "removeUser");
-    console.log(`User ${username} deleted`);
     setDeleted(true);
   };
 

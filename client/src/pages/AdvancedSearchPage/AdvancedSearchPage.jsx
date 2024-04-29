@@ -1,18 +1,7 @@
 import { SearchResults } from "../../components/SearchResults";
-import {
-  Container,
-  SegmentedControl,
-  useMantineTheme,
-  Grid,
-  Space,
-  rem,
-  Group,
-  Select,
-  Button,
-} from "@mantine/core";
+import { Container, SegmentedControl, useMantineTheme, Group, Select, Button } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { IconSearch, IconArrowRight } from "@tabler/icons-react";
-import { useForm } from "@mantine/form";
+import { IconArrowRight } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import { searchWithFilters, getGenres, getProviders, searchPeople } from "../../data/media";
 
@@ -31,13 +20,6 @@ export default function AdvancedSearchPage() {
   const [tvStatus, setTvStatus] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-
-  // TODO:
-  // Reset all fields and values on mediaType change -> form.reset()??
-  //
-  // Refactor code and maybe move the 'search form' into a separate component
-  //
-  // Save search parameters to session storage
 
   useEffect(() => {
     (async () => {

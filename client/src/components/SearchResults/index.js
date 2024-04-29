@@ -1,3 +1,3 @@
-import SearchResults from "./SearchResults.jsx"
+import SearchResults from "./SearchResults.jsx";
 
-export { SearchResults }
+export { SearchResults };

@@ -1,4 +1,4 @@
-import { Container, TextInput, Button, Box, Space, Checkbox, Stack } from "@mantine/core";
+import { Container, TextInput, Button, Space, Checkbox } from "@mantine/core";
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "@mantine/form";
 import { logout } from "../../data/auth";

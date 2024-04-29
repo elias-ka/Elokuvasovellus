@@ -28,14 +28,11 @@ export default function SearchPage() {
   const searchMovies = async (query) => {
     const searchQuery = !query ? searchText : query;
     if (!searchQuery.trim()) {
-      console.log("No search query provided");
       return;
     }
-    console.log(searchQuery);
     try {
       const searchResults = await searchMedia(searchQuery);
       setMovies(() => searchResults.results);
-      console.log("Movies searched");
     } catch (error) {
       console.error(error);
     }

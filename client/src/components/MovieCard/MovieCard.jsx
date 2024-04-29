@@ -1,20 +1,18 @@
-import { Button, Image, Text, ActionIcon } from "@mantine/core";
+import { Image, Text, ActionIcon } from "@mantine/core";
 import classes from "./MovieCard.module.css";
 import noimage from "../../assets/no-image.jpg";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { IconTrash } from "@tabler/icons-react";
 import useAuth from "../../hooks/useAuth";
 
 export default function MovieCard({ movie, isGroupOwner = false, handleDelete }) {
-  const [movieObj, setMovieObj] = useState(movie);
   const navigate = useNavigate();
   const { username } = useAuth();
   const addedBy = movie.username; // this is used in group media to show who added the movie
   const canBeDeleted = isGroupOwner || username === addedBy;
 
   const handleClick = () => {
-    navigate("/details", { state: { obj: movieObj } });
+    navigate("/details", { state: { obj: movie } });
   };
 
   const baseURL = "https://image.tmdb.org/t/p/w500";

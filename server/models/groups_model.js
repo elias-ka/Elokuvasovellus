@@ -28,7 +28,7 @@ const groups = {
       "INSERT INTO group_members (user_id, group_id, accepted) VALUES ($1, $2, true)",
       [group.ownerId, newGroup.group_id],
     );
-    return newGroup; // Palautetaan lisätyn ryhmän tiedot
+    return newGroup;
   },
 
   deleteGroup: async (groupId) => {

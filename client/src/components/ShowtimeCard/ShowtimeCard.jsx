@@ -40,7 +40,6 @@ export default function ShowtimeCard({ showtime }) {
       }
     } else {
       messageUser("Oopsies..", "This showtime is already in your group..", "red");
-      // console.log("Showtime already in group contents");
     }
   }
 
@@ -93,7 +92,7 @@ export default function ShowtimeCard({ showtime }) {
         </Stack>
         <Divider orientation="vertical" size="sm" />
         <Stack pl="sm" gap={0}>
-          <Anchor fz={{base: "h3", sm: "h2"}} fw="bold" href={showtime.EventURL} target="_blank">
+          <Anchor fz={{ base: "h3", sm: "h2" }} fw="bold" href={showtime.EventURL} target="_blank">
             {showtime.OriginalTitle}
           </Anchor>
           <Text c="dimmed" fz="lg">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "../../components/MovieCard/index.js";
 import { useParams } from "react-router-dom";
-import { Button, Container, Space, Grid, } from "@mantine/core";
+import { Container, Grid } from "@mantine/core";
 import { getFavoritesByListId } from "../../data/favorites.js";
 
 export default function SharedFavoritesPage() {
@@ -11,7 +11,6 @@ export default function SharedFavoritesPage() {
   const [sharedBy, setSharedBy] = useState(null);
 
   useEffect(() => {
-
     (async () => {
       await fetchFavorites();
     })();
@@ -20,11 +19,11 @@ export default function SharedFavoritesPage() {
   const fetchFavorites = async () => {
     try {
       const result = await getFavoritesByListId(listId);
-      // Muutetaan data ennen tilaan tallentamista 
+      // Muutetaan data ennen tilaan tallentamista
       // (MovieCard - komponentti odottaa "media_type", "poster_path" ja "id" - kenttiä)
       const modifiedMedia = result.map((media) => ({
         ...media,
-        media_type: media.type, 
+        media_type: media.type,
         poster_path: media.poster_url,
         id: media.tmdb_id,
       }));
@@ -43,13 +42,10 @@ export default function SharedFavoritesPage() {
       ))
     : null;
 
-
   return (
     <Container size="lg">
-      <h3>{ sharedBy }'s favorites:</h3>
-      <Grid mt="xl">
-        {favoritesGrid}
-      </Grid>
+      <h3>{sharedBy}'s favorites:</h3>
+      <Grid mt="xl">{favoritesGrid}</Grid>
     </Container>
   );
 }

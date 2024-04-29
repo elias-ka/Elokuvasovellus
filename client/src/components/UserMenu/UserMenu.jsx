@@ -1,7 +1,7 @@
 import classes from "./UserMenu.module.css";
 import { Menu, Group, Text, UnstyledButton } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconUser, IconSettings, IconLogout, IconCaretDownFilled } from "@tabler/icons-react";
+import { IconUser, IconLogout, IconCaretDownFilled } from "@tabler/icons-react";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 

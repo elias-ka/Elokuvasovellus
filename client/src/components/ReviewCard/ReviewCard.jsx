@@ -1,4 +1,4 @@
-import { Button, Card, Group, Rating, Stack, Text } from "@mantine/core";
+import { Button, Card, Group, Rating, Text } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 

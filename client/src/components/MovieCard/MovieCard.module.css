@@ -7,8 +7,7 @@
   position: relative;
 }
 
-.cardContainer:hover .image
-{
+.cardContainer:hover .image {
   transform: scale(1.1);
 }
 .cardContainer:hover .invisibleButton {

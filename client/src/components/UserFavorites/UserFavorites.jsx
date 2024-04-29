@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MovieCard } from "../../components/MovieCard";
 import { Carousel } from "@mantine/carousel";
 import useAuth from "../../hooks/useAuth";
-import { Button, ActionIcon, Tooltip, rem, Group, useMantineTheme } from "@mantine/core";
+import { ActionIcon, Tooltip, rem, Group, useMantineTheme } from "@mantine/core";
 import { getFavorites } from "../../data/favorites.js";
 import { IconCopy, IconCheck } from "@tabler/icons-react";
 import { showNotification } from "@mantine/notifications";
@@ -13,7 +13,6 @@ export default function UserFavorites() {
   const [favorites, setFavorites] = useState(null);
   const listId = userId;
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  // const baseUrl = import.meta.env.BASE_URL
   const shareLink = `${baseUrl}/shared-favorites/${listId}`;
 
   const theme = useMantineTheme();
@@ -40,7 +39,6 @@ export default function UserFavorites() {
     }
   };
 
-  // If not null, map favorites
   const favoritesSlide = favorites
     ? favorites.map((entry) => (
         <Carousel.Slide key={entry.id}>

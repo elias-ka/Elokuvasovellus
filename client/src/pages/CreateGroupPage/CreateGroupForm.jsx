@@ -1,7 +1,6 @@
 import { Button, TextInput, Group } from "@mantine/core";
 import { useForm, isNotEmpty } from "@mantine/form";
 import React from "react";
-import useAuth from "../../hooks/useAuth";
 
 export default function CreateGroupForm({ onSubmit }) {
   const form = useForm({
@@ -22,7 +21,6 @@ export default function CreateGroupForm({ onSubmit }) {
         label="Group name"
         placeholder="Group name"
         required
-      
         {...form.getInputProps("groupName")}
       />
       <TextInput
@@ -30,13 +28,15 @@ export default function CreateGroupForm({ onSubmit }) {
         placeholder="Group description"
         required
         mt="md"
-      mb="xl"
+        mb="xl"
         {...form.getInputProps("groupDescription")}
       />
-     <Group justify="space-evenly">
-      <Button type="submit" mr="xl" style={{ flex: 1 }}>Create Group</Button>
-      <Button style={{ flex: 1}} >Cancel</Button>
-    </Group>
+      <Group justify="space-evenly">
+        <Button type="submit" mr="xl" style={{ flex: 1 }}>
+          Create Group
+        </Button>
+        <Button style={{ flex: 1 }}>Cancel</Button>
+      </Group>
     </form>
   );
 }

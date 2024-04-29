@@ -1,3 +1,3 @@
-import SearchBar from "./SearchBar.jsx"
+import SearchBar from "./SearchBar.jsx";
 
-export { SearchBar }
+export { SearchBar };

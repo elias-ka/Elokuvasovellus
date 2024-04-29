@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { createdb, dropdb } = require("pgtools");
+const { createdb } = require("pgtools");
 const { Pool } = require("pg");
 
 if (process.env.NODE_ENV === "test") {
@@ -12,7 +12,6 @@ const config = {
   database: process.env.POSTGRES_DB,
   password: process.env.POSTGRES_PASSWORD,
   port: process.env.POSTGRES_PORT,
-  // ssl: true // This is for future render.com requirements
 };
 
 const createDatabase = async () => {

@@ -1,3 +1,3 @@
-import GroupDetailsPage from './GroupDetailsPage.jsx';
+import GroupDetailsPage from "./GroupDetailsPage.jsx";
 
 export { GroupDetailsPage };

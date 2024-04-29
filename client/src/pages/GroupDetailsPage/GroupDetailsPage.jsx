@@ -1,4 +1,4 @@
-import { Button, Container, Group, Space, Text, Title, Badge } from "@mantine/core";
+import { Container, Group, Space, Text, Title, Badge } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import {
@@ -23,7 +23,6 @@ export default function GroupDetailsPage() {
   const acceptedMembers = groupMembers.filter((member) => member.accepted);
   const isOwner = groupDetails.owner_id === userId;
   const groupId = groupDetails.group_id;
-  const { userGroups } = useUserInfo();
 
   useEffect(() => {
     (async () => {
@@ -36,7 +35,7 @@ export default function GroupDetailsPage() {
       const members = await getGroupMembers(groupId);
       setGroupMembers(members);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -44,9 +43,8 @@ export default function GroupDetailsPage() {
     if (!isOwner) return;
     try {
       await deleteGroupById(groupId);
-      console.log("Group ", groupDetails.group_name, " deleted");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -54,22 +52,19 @@ export default function GroupDetailsPage() {
     const actionMap = {
       accept: async () => {
         await acceptRequest(groupId, userId);
-        console.log("Request accepted");
       },
       reject: async () => {
         await deleteGroupMember(groupId, userId);
-        console.log("Request rejected");
       },
       removeUser: async () => {
         await deleteGroupMember(groupId, userId);
-        console.log("User removed from group");
       },
     };
     try {
       await actionMap[action]();
       getMembers();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
